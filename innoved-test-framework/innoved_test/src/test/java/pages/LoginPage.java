@@ -47,7 +47,7 @@ public class LoginPage extends PageObject{
 	}
 	
 	public Boolean loginfailedTextPresent() {
-		return base.waitForIsDisplayed(failureMessageLocator,"Error: Invalid Username or Password.", 10);
+		return base.waitForIsDisplayed(failureMessageLocator,"Error: Invalid Username or Password.", 3);
 		}
 	
 

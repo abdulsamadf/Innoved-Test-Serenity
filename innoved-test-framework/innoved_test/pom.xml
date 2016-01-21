@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>1.1.24</serenity.version>
         <serenity.maven.version>1.1.24</serenity.maven.version>
+        <surefire.version>2.19</surefire.version>
         <webdriver.driver>chrome</webdriver.driver>
     </properties>
 
@@ -28,6 +29,11 @@
             <artifactId>serenity-junit</artifactId>
             <version>${serenity.version}</version>
         </dependency>
+        <dependency>
+			<groupId>org.apache.maven.surefire</groupId>
+			<artifactId>surefire-api</artifactId>
+			<version>${surefire.version}</version>
+		</dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -52,12 +58,12 @@
                 <artifactId>maven-failsafe-plugin</artifactId>                  
                 <version>2.19.1</version>
                 <configuration>
+                <testFailureIgnore>true</testFailureIgnore>
                     <includes>
                         <include>**/features/**/When*.java</include>                  
                     </includes>
                     <systemProperties>
                         <webdriver.driver>${webdriver.driver}</webdriver.driver> 
-                        <surefire.rerunFailingTestsCount>${surefire.rerunFailingTestsCount}</surefire.rerunFailingTestsCount>
                         <surefire.rerunFailingTestsCount>${surefire.rerunFailingTestsCount}</surefire.rerunFailingTestsCount>
                     </systemProperties>
                 </configuration>
