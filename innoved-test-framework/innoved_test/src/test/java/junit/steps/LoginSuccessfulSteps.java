@@ -1,11 +1,9 @@
-package steps;
+package junit.steps;
 
-import static org.junit.Assert.assertTrue;
-
+import junit.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
-import pages.LoginPage;
 
-public class LoginUnsuccessfulSteps {
+public class LoginSuccessfulSteps{
 
 	LoginPage page;
 	 
@@ -24,11 +22,8 @@ public class LoginUnsuccessfulSteps {
 		page.login();
 	 }
 	 
-	 @Step("User is shown 'Error: Incorrect Username or Password' message")
-	 public void sees_incorrect_username_password_message(){
-		 assertTrue("Failure Message Wasn't Present after Providing Bogus Credentials",
-				 page.loginfailedTextPresent());
+	 @Step("User is shown the Welcome Page")
+	 public void sees_welcomepage(){
+		 page.welcomepage();
 	 }
-	
-	
 }

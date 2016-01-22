@@ -1,6 +1,10 @@
-package features;
+package junit.features;
 
 import org.openqa.selenium.WebDriver;
+
+import junit.pages.LoginPage;
+import junit.steps.LoginUnsuccessfulSteps;
+
 import org.junit.runner.RunWith;
 import org.junit.Test;
 
@@ -8,12 +12,9 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
-import pages.LoginPage;
-import steps.LoginUnsuccessfulSteps;
-
 
 @RunWith(SerenityRunner.class) 
-public class TestUserLoginUnsuccessful {
+public class UserLoginUnsuccessfulIT {
 
 	@Managed(driver="chrome")                              
     WebDriver driver;
