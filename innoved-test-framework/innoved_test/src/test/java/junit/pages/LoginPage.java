@@ -22,22 +22,22 @@ public class LoginPage extends PageObject{
 	 By usernameLocator  = By.xpath("//div[1]/div/input");
 	 By passwordLocator  = By.xpath("//div[2]/div/input");
 	 By successLocator = By.xpath("//li[3]/a"); 
-	 public By failureMessageLocator = By.xpath("//div[2]/form/div[1]");
+	 By failureMessageLocator = By.xpath("//div[2]/form/div[1]");
 
 	 
-	 public void type(String inputText, By locator) {
+	public void type(String inputText, By locator) {
 	        find(locator).sendKeys(inputText);
-	    }
+	}
 	 
-	 public void typeinUsernamePassword(String username, String password) {
+	public void typeinUsernamePassword(String username, String password) {
 		 type(username, usernameLocator);
 	     type(password, passwordLocator);
 		 
-	 }
+	}
  
 	public void login() {
 	        loginButton.click();
-	    }
+	}
 	 
 	public boolean welcomepage(){
 		return base.isDisplayed(successLocator);
@@ -49,10 +49,10 @@ public class LoginPage extends PageObject{
 	
 	public Boolean loginfailedTextPresent() {
 		return base.waitForIsDisplayed(failureMessageLocator,"Error: Invalid Username or Password.", 3);
-		}
+	}
 	
 
-	}
+}
 
 
 

@@ -31,7 +31,7 @@ public class UserLoginUnsuccessfulIT {
 	     user.userTypesUserPass("innovedadmin", "innoved123");
 		 user.logs_in();
 		 //THEN
-	     user.sees_incorrect_username_password_message();
+	     user.sees_incorrect_username_password_message_otherwise("Failure Message Wasn't Present after Providing Bogus Credentials");
 
 	 }
 	
