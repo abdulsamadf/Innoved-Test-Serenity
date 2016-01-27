@@ -16,7 +16,7 @@ public class Base extends PageObject{
             return find(locator).isDisplayed();
         } catch (org.openqa.selenium.NoSuchElementException exception) {
             return false;
-        }
+          }
     }
 
     public Boolean waitForIsDisplayedByLocator(By locator, Integer... timeout) {
@@ -25,7 +25,7 @@ public class Base extends PageObject{
                     (timeout.length > 0 ? timeout[0] : null));
         } catch (org.openqa.selenium.TimeoutException exception) {
             return false;
-        }
+          }
         return true;
     }
 
@@ -42,10 +42,15 @@ public class Base extends PageObject{
 		try {
 		waitFor(ExpectedConditions.textToBePresentInElementLocated(locator, text), (timeout.length > 0 ? timeout[0] : null));
 		} catch (org.openqa.selenium.TimeoutException exception) { return false;
-		}
-		return true; }
+		  }
+		return true; 
+	}
 		
 	private void waitFor(ExpectedCondition<Boolean> expectedCondition, Integer timeout) { timeout = timeout != null ? timeout : 5;
 		WebDriverWait wait = new WebDriverWait(getDriver(), timeout); wait.until(expectedCondition);
-		} 
+	} 
+	
+	
+	
+
 }

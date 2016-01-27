@@ -1,7 +1,6 @@
 package junit.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +12,7 @@ import org.openqa.selenium.By;
 
 @DefaultUrl("http://vle.innovedv2api.vm")    
 
-public class LoginPage extends PageObject{
+public class LoginPage extends Base{
 
 	 @FindBy(css="button.btn.btn-primary")
 	    WebElementFacade loginButton;

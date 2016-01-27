@@ -12,7 +12,7 @@ public class LoginSuccessfulSteps{
 		 page.open();
 	 }
 	
-	@Step("User Types in Username and Password")
+	@Step("User Types in Username: {0} and Password: {1}")
 	public void userTypesUserPass(String username, String password){
 	 page.typeinUsernamePassword(username, password);
 	}
