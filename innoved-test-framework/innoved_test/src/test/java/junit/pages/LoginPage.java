@@ -7,8 +7,14 @@ import org.openqa.selenium.support.FindBy;
 
 import junit.pages.Base;
 
-import org.openqa.selenium.By;
-
+import java.io.IOException;  
+import java.net.HttpURLConnection;  
+import java.net.MalformedURLException;  
+import java.net.URL;  
+import java.util.List;  
+import java.util.concurrent.TimeUnit;  
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;  
 
 @DefaultUrl("http://vle.innovedv2api.vm")    
 
@@ -30,8 +36,7 @@ public class LoginPage extends Base{
 	 
 	public void typeinUsernamePassword(String username, String password) {
 		 type(username, usernameLocator);
-	     type(password, passwordLocator);
-		 
+	     type(password, passwordLocator);	 
 	}
  
 	public void login() {
@@ -39,7 +44,7 @@ public class LoginPage extends Base{
 	}
 	 
 	public boolean welcomepage(){
-		return base.isDisplayed(successLocator);
+		return base.waitForIsDisplayedByLocator(successLocator, 5);
 	}
 	
 	public boolean loginfailed(){
@@ -49,6 +54,7 @@ public class LoginPage extends Base{
 	public Boolean loginfailedTextPresent() {
 		return base.waitForIsDisplayed(failureMessageLocator,"Error: Invalid Username or Password.", 3);
 	}
+	
 	
 
 }
